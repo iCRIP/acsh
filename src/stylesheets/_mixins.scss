@@ -1,0 +1,31 @@
+@mixin font-face($font-family, $url, $weight: '400', $style: 'regular') {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('#{$url}.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin make-col-offset-right($size, $columns: $grid-columns) {
+  $num: $size / $columns;
+
+  margin-right: if($num == 0, 0, percentage($num));
+}
+
+@mixin make-offset-right($breakpoints: $grid-breakpoints, $columns: $grid-columns) {
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      // `$columns - 1` because offsetting by the width of an entire row isn't possible
+      @for $i from 0 through ($columns - 1) {
+        @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
+          .offset-right#{$infix}-#{$i} {
+            @include make-col-offset-right($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}

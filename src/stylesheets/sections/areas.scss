@@ -1,0 +1,137 @@
+.areas {
+  &-item {
+    position: relative;
+
+    &:hover {
+      .areas-icon {
+        transform: translateY(-120px);
+
+        @include media-breakpoint-down('lg') {
+          transform: translateY(-60px);
+        }
+
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+
+      .areas-title {
+        color: $white;
+      }
+
+      .areas-img {
+        &::after {
+          background-color: #243d64;
+        }
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    @include media-breakpoint-down('lg') {
+      padding-bottom: $grid-gutter-width;
+    }
+  }
+
+  &-img {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+      transition: background-color 0.4s;
+      opacity: 0.9;
+    }
+
+    img {
+      min-height: 300px;
+      max-height: 400px;
+      width: 100%;
+      display: block;
+      transform: scale(1);
+      transition: transform 0.4s;
+    }
+  }
+
+  &-text {
+    position: absolute;
+    top: 30%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: em(40) em(80) em(40) em(40);
+
+    @include media-breakpoint-down('lg') {
+      padding: em(40);
+      top: 15%;
+    }
+
+    @include media-breakpoint-down('sm') {
+      top: 30%;
+    }
+
+    @include media-breakpoint-down('xs') {
+      top: 15%;
+    }
+  }
+
+  &-icon {
+    transition: transform 0.4s;
+    width: 70px;
+    height: 70px;
+    margin-bottom: em(35);
+
+    svg {
+      path {
+        fill: $primary;
+        transition: fill 0.4s;
+      }
+    }
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: em(24);
+    color: $primary;
+    transition: color 0.4s;
+  }
+}
+
+.banner {
+  background-image: url('../images/content/banner-bg.png');
+  background-size: cover;
+  color: $white;
+  padding: em(55) 0;
+
+  @include media-breakpoint-down('md') {
+    padding-left: em(30);
+    padding-right: em(30);
+  }
+
+  &-title {
+    line-height: 1.2;
+    font-size: em(36);
+    font-weight: 700;
+    padding-top: em(10, 36);
+    padding-bottom: em(10, 36);
+  }
+
+  &-subtitle {
+    font-size: em(18);
+    font-weight: 700;
+  }
+
+  &-button {
+    padding-top: em(30);
+  }
+}

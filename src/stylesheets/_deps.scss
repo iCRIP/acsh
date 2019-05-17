@@ -1,0 +1,8 @@
+$imgPath: '../images/';
+$fontPath: '../fonts/';
+
+@import '_vars';
+@import '_functions';
+@import '_mixins';
+@import '_fonts';
+@import "../../node_modules/bootstrap/scss/bootstrap";

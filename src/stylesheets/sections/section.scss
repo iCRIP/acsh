@@ -1,0 +1,33 @@
+.section {
+  position: relative;
+  padding-top: em(29);
+  padding-bottom: em(29);
+
+  &--research {
+    background-image: url('../images/research-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-color: $gray-300;
+    padding-top: em(50);
+  }
+
+  &--media {
+    background-size: cover;
+    background-position: center;
+    background-color: $gray-300;
+    background-image: url('../images/content/media-bg.png');
+  }
+
+  &-header {
+    padding-bottom: em(20);
+  }
+
+  &-title {
+    font-weight: 700;
+    font-size: em(30);
+
+    &--white {
+      color: $white;
+    }
+  }
+}

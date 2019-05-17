@@ -1,0 +1,50 @@
+.footer {
+  background-color: $dark-blue;
+  margin-top: auto;
+  color: $white;
+
+  &-sections {
+    padding: em(60) 0 em(35);
+  }
+
+  &-contact {
+    p {
+      font-size: em(14);
+      line-height: 2;
+      margin: 0;
+    }
+  }
+
+  &-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: em(18);
+    font-weight: 600;
+    line-height: 1.2;
+
+    li {
+      margin-bottom: em(23, 18);
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.copyrights {
+  &-wrap {
+    padding: em(30) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.research {
+  &-carousel {
+    position: relative;
+
+    &-arrow {
+      width: 10%;
+
+      &::after {
+        content: '';
+        background-image: url('../images/arrow-blue.png');
+        background-size: auto 100%;
+        background-position: center right;
+        width: 25px;
+        height: 14px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -7px;
+      }
+
+      &--left {
+        &::after {
+          left: 0;
+          transform: scaleX(-1);
+        }
+      }
+    }
+
+    &-indicators {
+      margin-top: em(30);
+      position: relative;
+
+      li {
+        width: em(6);
+        height: em(6);
+        border-radius: 50%;
+        background-color: $secondary;
+        transition: background-color 0.4s;
+        margin-left: em(7);
+        margin-right: em(7);
+
+        &.active {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+
+  &-item {
+    padding-bottom: em(15);
+  }
+
+  &-img {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &-title {
+    padding-top: em(18);
+    font-weight: 700;
+
+    @include media-breakpoint-down('sm') {
+      font-size: em(14);
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+}

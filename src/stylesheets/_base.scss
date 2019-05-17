@@ -1,0 +1,30 @@
+body {
+  font-family: $ffMain;
+  font-size: 1rem;
+}
+
+.body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  border-radius: 0;
+
+  &-lg {
+    font-weight: 600;
+    font-size: em(18);
+    padding: em(15, 18) em(25, 18);
+  }
+
+  &-download {
+    &::after {
+      content: url('../images/download-icon.svg');
+      margin-left: 1.2em;
+      vertical-align: middle;
+    }
+  }
+}
+
+@include make-offset-right();
