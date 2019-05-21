@@ -151,11 +151,13 @@
 }
 
 .navbar {
-  padding: em(13) em(15);
+  padding: 0 em(15);
+  position: static;
 
   &-wrap {
     border-top: 1px solid $gray-200;
     box-shadow: 0 3px 7px -5px rgba(0, 0, 0, 0.3);
+    position: relative;
   }
 }
 
@@ -164,8 +166,8 @@
     line-height: 1.2;
     font-weight: 600;
     color: $black;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: em(13);
+    padding-bottom: em(10);
     padding-left: em(25, 16);
     padding-right: em(25, 16);
     transition: color 0.2s;
@@ -176,15 +178,60 @@
   }
 
   &-item {
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.4s;
+
     &:first-child {
-      .nav-link {
-        padding-left: 0;
-      }
+      margin-left: em(-25);
     }
 
     &:last-child {
       .nav-link {
         padding-right: 0;
+      }
+    }
+
+    &.active {
+      border-color: $primary;
+    }
+
+    &:hover {
+      border-color: $primary;
+
+      .nav-mega {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &-mega {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 15;
+    background-color: $white;
+    padding-top: em(37);
+    padding-bottom: em(37);
+    border-top: 1px solid $gray-200;
+    opacity: 0;
+    transition: opacity 0.4s;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      padding-top: em(13);
+      padding-bottom: em(13);
+
+      a {
+        font-size: em(16);
+        color: inherit;
       }
     }
   }
@@ -323,9 +370,45 @@
     ul {
       margin: 0;
       padding: em(15) em(15) em(15) em(20);
+      list-style: none;
 
       li {
         margin: em(10) 0;
+        position: relative;
+
+        a {
+          color: inherit;
+        }
+
+        &.has-child {
+          &::after {
+            content: '>';
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: rotate(90deg);
+            transition: transform 0.4s;
+          }
+
+          &:hover,
+          &.active {
+            &::after {
+              transform: rotate(-90deg);
+            }
+
+            ul {
+              max-height: 500px;
+              padding: em(15);
+            }
+          }
+
+          ul {
+            overflow: hidden;
+            padding: 0 em(15);
+            max-height: 0;
+            transition: max-height 0.4s, padding 0.4s;
+          }
+        }
       }
 
       .nav-link {
