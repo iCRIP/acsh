@@ -53,12 +53,38 @@
       }
     }
 
+    &-flag {
+      vertical-align: middle;
+      padding-bottom: em(5);
+      line-height: 1.2;
+
+      span {
+        vertical-align: middle;
+        display: inline-block;
+      }
+    }
+
+    &-excerpt {
+      color: $primary;
+      line-height: 1.2;
+    }
+
     &-title {
       font-weight: 500;
       font-size: em(18);
       color: $black;
       padding-top: em(10);
       padding-bottom: em(10);
+
+      &--big {
+        font-size: em(24);
+        font-weight: bold;
+      }
+
+      &--nop {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
 
       a {
         color: inherit;
