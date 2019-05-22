@@ -59,6 +59,28 @@
       margin-bottom: em(30, 18);
     }
 
+    ul {
+      padding: 0;
+      margin: em(30, 18) 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        padding-left: em(40, 18);
+        margin-bottom: em(20, 18);
+
+        &::before {
+          content: '';
+          width: 5px;
+          height: 5px;
+          background-color: $primary;
+          position: absolute;
+          left: 24px;
+          top: 10px;
+        }
+      }
+    }
+
     img {
       margin-top: em(30, 18);
       margin-bottom: em(50, 18);
