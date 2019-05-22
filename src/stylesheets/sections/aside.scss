@@ -1,0 +1,80 @@
+.content {
+  overflow: hidden;
+
+  &-left {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 100%;
+      width: 100vw;
+      background-color: $gray-100;
+    }
+  }
+}
+
+.left-menu {
+  padding: em(40) $grid-gutter-width / 2;
+  margin-left: -$grid-gutter-width / 2;
+  margin-right: -$grid-gutter-width / 2;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    background-color: $primary;
+  }
+
+  &-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &-item {
+    opacity: 0.6;
+    margin-bottom: em(15);
+    color: $white;
+    transition: opacity 0.4s;
+    position: relative;
+
+    &.active {
+      opacity: 1;
+      font-weight: bold;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 4%;
+        top: 50%;
+        margin-top: em(-7);
+        height: em(14);
+        width: em(25);
+        background-image: url('../images/arrow-white-small.png');
+        background-position: center;
+        background-size: contain;
+      }
+    }
+
+    &:hover {
+      opacity: 1;
+
+      .left-menu-link {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+
+  &-link {
+    display: block;
+    color: inherit;
+  }
+}

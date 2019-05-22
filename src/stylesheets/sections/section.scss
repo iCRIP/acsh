@@ -3,6 +3,11 @@
   padding-top: em(29);
   padding-bottom: em(29);
 
+  &--solo {
+    padding-top: em(70);
+    padding-bottom: em(70);
+  }
+
   &--research {
     background-image: url('../images/research-bg.png');
     background-size: cover;

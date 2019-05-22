@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="4" viewBox="0 0 18 4">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Эллипс_1_копия_2" data-name="Эллипс 1 копия 2" class="cls-1" d="M902,2099a2,2,0,1,1-2,2A2,2,0,0,1,902,2099Zm7,0a2,2,0,1,1-2,2A2,2,0,0,1,909,2099Zm7,0a2,2,0,1,1-2,2A2,2,0,0,1,916,2099Z" transform="translate(-900 -2099)"/>
+</svg>

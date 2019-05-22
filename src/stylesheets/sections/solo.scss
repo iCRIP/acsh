@@ -1,0 +1,130 @@
+.content-right {
+  padding-top: em(40);
+}
+
+.breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 0;
+
+  &-item {
+    color: $primary;
+    font-size: em(14);
+
+    a {
+      color: inherit;
+    }
+
+    & + .breadcrumb-item {
+      padding-left: 0.3em;
+
+      &::before {
+        padding-right: 0;
+        color: inherit;
+      }
+    }
+  }
+}
+
+.solo {
+  padding-bottom: em(50);
+
+  &-title {
+    margin-top: em(15, 30);
+    margin-bottom: em(15, 30);
+    font-size: em(30);
+    line-height: 1.2;
+    font-weight: bold;
+  }
+
+  &-time {
+    font-weight: bold;
+    color: $primary;
+  }
+
+  &-content {
+    font-size: em(18);
+    padding-top: em(30, 18);
+    padding-bottom: em(20, 18);
+
+    @include media-breakpoint-down('lg') {
+      font-size: em(16);
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    p {
+      margin-bottom: em(30, 18);
+    }
+
+    img {
+      margin-top: em(30, 18);
+      margin-bottom: em(50, 18);
+
+      &.full-width-img {
+        margin-left: -16.1%;
+        max-width: em(880, 18);
+
+        @include media-breakpoint-down('lg') {
+          margin-left: -16.3%;
+          max-width: em(800, 18);
+        }
+
+        @include media-breakpoint-down('md') {
+          margin-left: 0;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.share {
+  font-weight: bold;
+  line-height: 1.2;
+
+  span {
+    &:first-child {
+      vertical-align: middle;
+      margin-right: em(15);
+    }
+  }
+
+  &_icon {
+    margin: 0 em(8);
+    vertical-align: middle;
+    width: em(25);
+    height: em(18);
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 0.4s;
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &--facebook {
+      background-image: url('../images/share-icon-facebook.svg');
+    }
+
+    &--twitter {
+      background-image: url('../images/share-icon-twitter.svg');
+    }
+
+    &--google {
+      background-image: url('../images/share-icon-google.svg');
+    }
+
+    &--vk {
+      background-image: url('../images/share-icon-vk.svg');
+    }
+
+    &--other {
+      background-image: url('../images/share-icon-more.svg');
+    }
+  }
+}
