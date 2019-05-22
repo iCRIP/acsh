@@ -101,6 +101,27 @@
       }
     }
   }
+
+  &-thumb {
+    padding: em(10) 0;
+    &_img {
+      padding-bottom: em(5);
+
+      img {
+        display: block;
+      }
+    }
+
+    &_name {
+      font-weight: bold;
+      font-size: em(18);
+      padding: em(5, 18) 0;
+    }
+
+    &_read {
+      color: $secondary;
+    }
+  }
 }
 
 .share {
