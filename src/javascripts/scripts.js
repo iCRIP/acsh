@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 // Add your scripts here
 import * as jQuery from 'jquery';
 import 'bootstrap';
@@ -40,6 +41,22 @@ jQuery(document).ready(($) => {
       });
     });
   }
+
+  // custom selects
+
+  $('.filter-select').hover(function () {
+    $(this).addClass('active');
+  }, function () {
+    $(this).removeClass('active');
+  });
+
+  $('.filter-select-item').click(function () {
+    const wrapper = $(this).parent().parent();
+    const text = $(this).find('.filter-select-text').text();
+    wrapper.find('.filter-select-current').text(text);
+    wrapper.removeClass('active');
+  });
+
   function dataImage(index, item) {
     $(item).attr('src', $(item).data('src'));
   }
