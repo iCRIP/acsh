@@ -42,6 +42,23 @@ jQuery(document).ready(($) => {
     });
   }
 
+  // tabs
+
+  if ($('.tabs').length) {
+    const tabLink = $('.tab-link');
+    tabLink.click(function () {
+      const tabs = $(this).closest('.tabs');
+      const siblings = $(this).parent().parent().find('.tab-link');
+      const index = siblings.index(this);
+      const tabItem = tabs.find('.tab-item');
+
+      tabItem.removeClass('active');
+      tabItem.eq(index).addClass('active');
+      siblings.removeClass('active');
+      $(this).addClass('active');
+    });
+  }
+
   // custom selects
 
   $('.filter-select').hover(function () {
@@ -56,6 +73,8 @@ jQuery(document).ready(($) => {
     wrapper.find('.filter-select-current').text(text);
     wrapper.removeClass('active');
   });
+
+  // lazy load images
 
   function dataImage(index, item) {
     $(item).attr('src', $(item).data('src'));

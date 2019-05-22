@@ -12,6 +12,10 @@
       left: 100%;
       width: 100vw;
       background-color: $gray-100;
+
+      @include media-breakpoint-down('md') {
+        display: none;
+      }
     }
   }
 }
@@ -88,6 +92,10 @@
   padding-top: em(40);
   padding-bottom: em(40);
   padding-right: em(20);
+
+  @include media-breakpoint-down('md') {
+    padding: em(20) 0 0;
+  }
 
   &-search {
     position: relative;
