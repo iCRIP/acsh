@@ -40,4 +40,9 @@ jQuery(document).ready(($) => {
       });
     });
   }
+  function dataImage(index, item) {
+    $(item).attr('src', $(item).data('src'));
+  }
+
+  $('img[data-src]').each(dataImage);
 });
