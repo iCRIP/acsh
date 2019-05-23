@@ -189,3 +189,42 @@
     font-size: em(16);
   }
 }
+
+.user {
+  position: relative;
+  z-index: 2;
+
+  &-img {
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &-desc {
+    color: $white;
+
+    &--black {
+      color: $black;
+    }
+  }
+
+  &-name {
+    font-size: em(24);
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  &-action {
+    a {
+      color: inherit;
+      text-decoration: underline;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+
+      &:hover {
+        text-decoration: none;
+        opacity: 1;
+      }
+    }
+  }
+}

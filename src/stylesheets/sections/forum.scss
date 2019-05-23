@@ -1,0 +1,35 @@
+.forum {
+  &-item {
+    &-img {
+      img {
+        border-radius: 50%;
+        width: em(61);
+        height: em(61);
+      }
+    }
+
+    &-title {
+      font-weight: bold;
+      font-size: em(18);
+      line-height: 1.2;
+
+      a {
+        color: inherit;
+
+        &:hover {
+          text-decoration: none;
+          color: $primary;
+        }
+      }
+    }
+
+    &-meta {
+      font-size: em(14);
+      color: $secondary;
+    }
+
+    &-author {
+      color: $black;
+    }
+  }
+}
