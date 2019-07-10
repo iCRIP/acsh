@@ -8,6 +8,10 @@
       @include media-breakpoint-down('sm') {
         height: 50px;
       }
+
+      @include media-breakpoint-down('xs') {
+        height: 33px;
+      }
     }
   }
 
@@ -16,12 +20,16 @@
       top: 0;
       right: 0;
       position: absolute;
-      width: 55px;
-      height: 106px;
+      width: 73px;
+      height: 166px;
       background-image: url('../images/second-logo.png');
       background-size: auto 100%;
       background-repeat: no-repeat;
       background-position: center;
+
+      @include media-breakpoint-down('lg') {
+        height: 100px;
+      }
 
       @include media-breakpoint-down('sm') {
         height: 70px;
@@ -135,8 +143,8 @@
   }
 
   .container {
-    padding-top: em(13);
-    padding-bottom: em(14);
+    padding-top: em(11);
+    padding-bottom: em(12);
 
     @include media-breakpoint-down('md') {
       padding-left: em(60);
@@ -167,7 +175,7 @@
     font-weight: 600;
     color: $black;
     padding-top: em(13);
-    padding-bottom: em(10);
+    padding-bottom: em(15);
     padding-left: em(25, 16);
     padding-right: em(25, 16);
     transition: color 0.2s;
@@ -365,6 +373,12 @@
   }
 }
 
+#mobile-menu {
+  .menu-block {
+    padding: em(10);
+  }
+}
+
 .mobile {
   &-nav {
     ul {
@@ -373,32 +387,41 @@
       list-style: none;
 
       li {
-        margin: em(10) 0;
+        margin: em(17) 0;
         position: relative;
 
         a {
           color: inherit;
+          line-height: 1.4;
         }
 
         &.has-child {
           &::after {
-            content: '>';
+            content: '';
             position: absolute;
             right: 0;
-            top: 0;
-            transform: rotate(90deg);
+            top: em(-10);
             transition: transform 0.4s;
+            height: 40px;
+            width: 40px;
+            background-image: url($imgPath + 'menu-arrow.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 20px 20px;
           }
 
-          &:hover,
           &.active {
             &::after {
-              transform: rotate(-90deg);
+              transform: rotate(-180deg);
             }
 
             ul {
               max-height: 500px;
-              padding: em(15);
+              padding: em(10);
+
+              li {
+                margin: em(10) 0;
+              }
             }
           }
 

@@ -81,4 +81,12 @@ jQuery(document).ready(($) => {
   }
 
   $('img[data-src]').each(dataImage);
+
+  $('.mobile-nav .has-child').click(function () {
+    if ($(this).hasClass('active')) {
+      $(this).removeClass('active');
+    } else {
+      $(this).addClass('active');
+    }
+  });
 });

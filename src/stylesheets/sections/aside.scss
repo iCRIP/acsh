@@ -40,28 +40,32 @@
     padding-left: 0;
     margin: 0;
     list-style: none;
+    padding-right: em(50);
   }
 
   &-item {
-    opacity: 0.6;
     margin-bottom: em(15);
-    color: $white;
-    transition: opacity 0.4s;
+    color: #8ea6cb;
+    transition: color 0.4s;
     position: relative;
-    padding-right: em(98);
+    padding-right: 0;
 
-    @include media-breakpoint-down('lg') {
-      padding-right: em(60);
+    .left-menu-list {
+      padding-right: 0;
+    }
+
+    &.has-child {
+      color: #fff;
     }
 
     &.active {
-      opacity: 1;
+      color: #fff;
       font-weight: bold;
 
       &::after {
         content: '';
         position: absolute;
-        right: 4%;
+        right: em(-44);
         top: 50%;
         margin-top: em(-7);
         height: em(14);
@@ -73,7 +77,7 @@
     }
 
     &:hover {
-      opacity: 1;
+      color: #fff;
 
       .left-menu-link {
         text-decoration: none;
